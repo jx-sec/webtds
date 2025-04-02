@@ -1,6 +1,6 @@
 services:
   wtds:
-    image: "ccr.ccs.tencentyun.com/jxwaf/wtds:v1.10"
+    image: "ccr.ccs.tencentyun.com/jxwaf/wtds:v1.12"
     network_mode: host
     ulimits:
       nofile:
