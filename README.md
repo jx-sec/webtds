@@ -163,6 +163,28 @@ docker compose  up -d
 
 ### 效果验证
 
+#### 环境说明
+
+JXWAF节点
+
+外网地址: 47.120.34.247
+
+内网地址: 172.29.198.240
+
+WebTDS节点  
+
+外网地址:  47.120.67.55
+
+内网地址:  172.29.198.242
+
+#### 配置说明
+
+在JXWAF控制台 系统管理 -> WebTDS检测配置 ，参考如下进行配置 
+
+<kbd><img src="img/webtds_check" width="400"></kbd>
+
+
+
 在控制台 防护管理 -> 网站防护 ，点击新建分组，参考如下配置进行设置
 
 <kbd><img src="img/prod_group_conf.png" width="400"></kbd>
