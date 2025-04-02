@@ -13,9 +13,9 @@ services:
       - "9004:9004"
     environment:
       CLICKHOUSE_DB: wtds
-      CLICKHOUSE_USER: jxlog
+      CLICKHOUSE_USER: jxlog_user
       CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
-      CLICKHOUSE_PASSWORD: jxlog
+      CLICKHOUSE_PASSWORD: jxlog_password
     volumes:
       - /opt/wtds_data/clickhouse:/var/lib/clickhouse
     restart: unless-stopped
@@ -30,8 +30,8 @@ services:
     environment:
       CLICKHOUSE: 172.10.0.10:9000
       DATABASE: wtds
-      USERNAME: jxlog
-      PASSWORD: jxlog
+      USERNAME: jxlog_user
+      PASSWORD: jxlog_password
       TABLE: wtds_log
       TCPSERVER: 0.0.0.0
     depends_on:
