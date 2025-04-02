@@ -108,7 +108,7 @@ WebTDS支持通过在线学习训练专属安全模型 , 可用于复杂安全�
 
 访问 https://webtds.jxwaf.com 进行账号注册
 
-<kbd><img src="img/account_otp.png" width="250"></kbd>
+<kbd><img src="img/account_otp.png" width="400"></kbd>
 
 账号需要使用动态口令进行二次验证，可以在微信上使用小程序  **腾讯身份验证器** 扫描页面上的二维码获取动态口令
 
