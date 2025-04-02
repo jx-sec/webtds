@@ -142,23 +142,17 @@ docker compose  up -d
 <kbd><img src="img/node_status.png"></kbd>
 
 
-### jxlog 部署
-
-服务器 IP 地址
-
-- 公网地址: 47.115.222.190
-- 内网地址: 172.29.198.239
+### WebTDS日志服务部署
 
 ```
 # 1. 安装Docker
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 # 2. 克隆仓库（国内可以换成 https://gitclone.com/github.com/jx-sec/jxwaf.git）
-git clone https://github.com/jx-sec/jxwaf.git
+git clone https://github.com/jx-sec/webtds.git
 # 3. 启动容器
-cd jxwaf/jxlog
-docker compose up -d
+cd webtds/webtds_jxlog
+docker compose  up -d
 ```
-
 部署完成后，在控制台中 系统配置 -> 日志传输配置 完成如下配置
 
 <kbd><img src="img/jxlog_conf.png" width="500"></kbd>
