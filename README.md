@@ -155,17 +155,17 @@ docker compose  up -d
 ```
 部署完成后，在控制台中 系统配置 -> 日志传输配置 完成如下配置
 
-<kbd><img src="img/jxlog_conf.png" width="500"></kbd>
+<kbd><img src="img/jxlog_conf.png" width="200"></kbd>
 
 在 控制台 系统配置 -> 日志查询配置 完成如下配置，其中 ClickHouse 数据库的帐号密码可以在 docker-compose.yml 文件中修改
 
-<kbd><img src="img/clickhouse_conf.png" width="500"></kbd>
+<kbd><img src="img/clickhouse_conf.png" width="200"></kbd>
 
 ### 效果验证
 
 在控制台 防护管理 -> 网站防护 ，点击新建分组，参考如下配置进行设置
 
-<kbd><img src="img/prod_group_conf.png" width="500"></kbd>
+<kbd><img src="img/prod_group_conf.png" width="400"></kbd>
 
 创建完成后，点击 查看网站 ，点击新建网站，参考如下配置进行设置
 
