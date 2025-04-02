@@ -128,7 +128,7 @@ cd webtds/webtds_node
 vim docker-compose.yml
 ```
 
-修改文件中的 WTDS_AUTH 
+修改文件中的 WTDS_AUTH , WTDS_AUTH 为 系统管理 -> 基础信息 中 wtds_auth 的值
 
 <kbd><img src="img/compose_conf.png" width="500"></kbd>
 
@@ -140,6 +140,7 @@ docker compose  up -d
 启动后，可以在 运营中心 -> 节点状态 查看节点是否上线
 
 <kbd><img src="img/node_status.png"></kbd>
+
 
 ### jxlog 部署
 
