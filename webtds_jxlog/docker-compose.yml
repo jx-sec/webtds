@@ -17,6 +17,7 @@ services:
       CLICKHOUSE_USER: jxlog_user
       CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
       CLICKHOUSE_PASSWORD: jxlog_password
+      TZ: Asia/Shanghai
     volumes:
       - /opt/wtds_data/clickhouse:/var/lib/clickhouse
     restart: unless-stopped
@@ -35,8 +36,9 @@ services:
       PASSWORD: jxlog_password
       TABLE: wtds_log
       TCPSERVER: 0.0.0.0
+      TZ: Asia/Shanghai
     depends_on:
-      - clickhouse
+      - webtds_clickhouse
     restart: unless-stopped
     networks:
       clickhouse_network:
