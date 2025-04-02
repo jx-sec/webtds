@@ -185,13 +185,99 @@ WebTDS节点
 
 #### 配置WebTDS检测策略 
 
-目标: 爬虫检测  
+目标: 简单的爬虫检测  
 
 检测逻辑:  在10分钟内，同一个IP地址，访问不同的HTML页面，且接口返回为200，访问的页面数量超过100即告警
 
 检测策略配置: 
 
-<kbd><img src="img/bot_check_policy.png" width="400"></kbd>
+<kbd><img src="img/bot_check_policy.png" width="500"></kbd>
+
+检测策略 -> 内部字典配置:
+
+<kbd><img src="img/inner_dict.png" width="1000"></kbd>
+
+检测策略 -> 策略规则配置:
+
+<kbd><img src="img/policy_rule.png" width="1000"></kbd>
+
+- ip_diff_html_count
+
+<kbd><img src="img/ip_diff_html_count1.png" width="400"></kbd>
+
+<kbd><img src="img/ip_diff_html_count2.jpg" width="400"></kbd>
+
+匹配条件1: 访问的是HTML页面
+
+匹配条件2: 返回为200
+
+匹配条件3: 当前IP在10分钟内(内部字典过期时间)，未曾访问过当前HTML页面
+
+匹配成功执行: 当前IP的HTML访问页面数量 +1 
+
+- ip_diff_html_check
+
+<kbd><img src="img/ip_diff_html_check1.png" width="400"></kbd>
+
+<kbd><img src="img/ip_diff_html_check2.png" width="400"></kbd>
+
+匹配条件1: 访问的是HTML页面
+
+匹配条件2: 返回为200
+
+匹配条件3: 当前IP在10分钟内(内部字典过期时间)，访问的HTML页面数量大于100
+
+匹配成功执行: 策略检测成功
+
+- html_log
+
+<kbd><img src="img/html_log1.png" width="400"></kbd>
+
+<kbd><img src="img/html_log2.png" width="400"></kbd>
+
+匹配条件1: 访问的是HTML页面
+
+匹配条件2: 返回为200
+
+匹配成功执行: 记录当前IP访问的HTML页面，记录周期为10分钟(内部字典过期时间)
+
+策略告警配置： 
+
+<kbd><img src="img/policy_alert.png" width="500"></kbd>
+
+加载检测策略：
+
+在 线上环境 ->  检测策略 中，点击 加载 ，选择 bot_check  
+
+<kbd><img src="img/load_policy_check.png" width="1000"></kbd>
+
+#### 验证检测策略效果
+
+为方便验证效果，在JXWAF控制台中，设置WAF防护规则为匹配html后缀即阻断请求，同时将拦截页面的HTTP响应码设置为200
+
+运行下面Python脚本进行测试:
+```
+import requests
+
+base_url = "http://47.120.34.247/"
+
+for i in range(1, 111):  # 从1到110
+    url = f"{base_url}a{i}.html"
+    try:
+        response = requests.get(url)
+        print(f"访问 {url} - 状态码: {response.status_code}")
+    except requests.exceptions.RequestException as e:
+        print(f"访问 {url} 时出错: {e}")
+
+print("所有页面访问完成")
+```
+运行完成后，即可在运营中心查看检测结果
+
+在 运营中心 -> 事件运营 查看
+<kbd><img src="img/soc_policy_check_result.png" width="1000"></kbd>
+
+在 运营中心 -> 行为轨迹 查看
+<kbd><img src="img/soc_policy_check_result2.png" width="1000"></kbd>
 
 
 
