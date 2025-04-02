@@ -6,7 +6,8 @@ networks:
         - subnet: 172.60.0.0/24
 
 services:
-  clickhouse:
+  webtds_clickhouse:
+    container_name: webtds_clickhouse
     image: "ccr.ccs.tencentyun.com/jxwaf/clickhouse-server:22.8.5-alpine"
     ports:
       - "9000:9000"
@@ -22,8 +23,8 @@ services:
     networks:
       clickhouse_network:
         ipv4_address: 172.60.0.10
-  jxlog:
-    container_name: jxlog
+  webtds_jxlog:
+    container_name: webtds_jxlog
     image: "ccr.ccs.tencentyun.com/jxwaf/webtds-jxlog:v1.0"
     ports:
       - "8866:8866"
