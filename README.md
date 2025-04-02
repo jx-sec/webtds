@@ -184,7 +184,15 @@ WebTDS节点
 <kbd><img src="img/webtds_check.png" width="400"></kbd>
 
 #### 配置WebTDS检测策略 
- 
+
+目标: 爬虫检测  
+
+检测逻辑:  在10分钟内，同一个IP地址，访问不同的HTML页面，且接口返回为200，访问的页面数量超过100即告警
+
+检测策略配置: 
+
+<kbd><img src="img/bot_check_policy.png" width="400"></kbd>
+
 
 
 ## 贡献者
