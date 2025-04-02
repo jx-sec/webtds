@@ -187,3 +187,12 @@ root@iZf8z5lulvvv47480fig8gZ:~/jxwaf# pwd
 
 <kbd><img src="img/attack_event.png" width="1000"></kbd>
 
+## 贡献者
+
+- [chenjc](https://github.com/jx-sec)
+- [jiongrizi](https://github.com/jiongrizi)
+
+## BUG&需求
+
+- 微信 574604532 添加请备注 jxwaf
+
