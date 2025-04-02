@@ -24,13 +24,14 @@ services:
     networks:
       clickhouse_network:
         ipv4_address: 172.60.0.10
+
   webtds_jxlog:
     container_name: webtds_jxlog
     image: "ccr.ccs.tencentyun.com/jxwaf/webtds-jxlog:v1.0"
     ports:
       - "8866:8866"
     environment:
-      CLICKHOUSE: 172.10.0.10:9000
+      CLICKHOUSE: 172.60.0.10:9000  
       DATABASE: wtds
       USERNAME: jxlog_user
       PASSWORD: jxlog_password
