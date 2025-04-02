@@ -155,11 +155,11 @@ docker compose  up -d
 ```
 部署完成后，在控制台中 系统配置 -> 日志传输配置 完成如下配置
 
-<kbd><img src="img/jxlog_conf.png" width="200"></kbd>
+<kbd><img src="img/jxlog_conf.png" width="400"></kbd>
 
 在 控制台 系统配置 -> 日志查询配置 完成如下配置，其中 ClickHouse 数据库的帐号密码可以在 docker-compose.yml 文件中修改
 
-<kbd><img src="img/clickhouse_conf.png" width="200"></kbd>
+<kbd><img src="img/clickhouse_conf.png" width="400"></kbd>
 
 ### 效果验证
 
