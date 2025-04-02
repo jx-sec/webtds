@@ -177,37 +177,15 @@ WebTDS节点
 
 内网地址:  172.29.198.242
 
-#### 配置说明
+#### 开启WebTDS检测
 
 在JXWAF控制台 系统管理 -> WebTDS检测配置 ，参考如下进行配置 
 
-<kbd><img src="img/webtds_check" width="400"></kbd>
+<kbd><img src="img/webtds_check.png" width="400"></kbd>
 
+#### 配置WebTDS检测策略 
+ 
 
-
-在控制台 防护管理 -> 网站防护 ，点击新建分组，参考如下配置进行设置
-
-<kbd><img src="img/prod_group_conf.png" width="400"></kbd>
-
-创建完成后，点击 查看网站 ，点击新建网站，参考如下配置进行设置
-
-<kbd><img src="img/prod_website_conf.png" width="500"></kbd>
-
-
-配置完成后，回到 jxlog 服务器,
-
-```
-root@iZf8z5lulvvv47480fig8gZ:~/jxwaf# pwd
-/root/jxwaf
-[root@VM-0-13-centos jxlog]# cd waf_test/
-[root@VM-0-13-centos waf_test]# python3 waf_poc_test.py -u http://47.113.220.170
-```
-
-运行 waf 测试脚本后,即可在控制台中的 运营中心 -> Web安全报表 和 运营中心 -> Web安全报表 查看防护效果
-
-<kbd><img src="img/web_attack_chart.png" width="1000"></kbd>
-
-<kbd><img src="img/attack_event.png" width="1000"></kbd>
 
 ## 贡献者
 
