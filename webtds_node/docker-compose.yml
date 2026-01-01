@@ -14,6 +14,7 @@ services:
       GLOBAL_DICT: 100m
       SYS_DATA: 100m
       USER_DATA: 100m
+      NODE_DATA: 100m 
       SUPPRESS: 100m
       TZ: Asia/Shanghai
     restart: unless-stopped
